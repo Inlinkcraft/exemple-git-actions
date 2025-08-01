@@ -1,0 +1,39 @@
+name: "Exemple Workflow"
+run-name: "Execution d'exemple"
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+concurrency:
+  group: exemple-group
+  cancel-in-progress: false
+
+jobs:
+  greet-the-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: récupéré le repository
+        uses: actions/checkout@v4
+
+      - name: Dit bonjour
+        run: echo "Hello"
+
+      - name: Dit world
+        run: echo "World"
+
+      - name: Felicitation
+        run: |
+          echo "Bravo"
+          echo "tu as un workflow !"
+
+  calcule:
+    runs-on: ubunto-latest
+    steps:
+      - name: Calcule 2+2
+        run: echo "4"
+
+      - name: Calcule 4+4
+        run: echo "8"
