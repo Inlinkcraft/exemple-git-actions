@@ -30,7 +30,7 @@ jobs:
           echo "tu as un workflow !"
 
   calcule:
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Calcule 2+2
         run: echo "4"
